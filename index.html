@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#4a1a6b">
+<title>Mor Kart</title>
+<style>
+  :root {
+    --bg: #faf7fc;
+    --ink: #2a1238;
+    --muted: #6b5778;
+    --purple: #5b2185;
+    --purple-dark: #3f145e;
+    --purple-soft: #efe5f6;
+    --line: #e2d3ec;
+    --exit: #c6162e;
+    --red: #b3121f;
+    --wa: #1a8f4c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+  }
+  .exit {
+    position: sticky; top: 0; z-index: 10;
+    display: block; width: 100%;
+    padding: 18px 16px calc(18px);
+    padding-top: calc(18px + env(safe-area-inset-top));
+    background: var(--exit); color: #fff;
+    border: 0; font: inherit; font-size: 1.25rem; font-weight: 800;
+    letter-spacing: .02em; text-align: center; text-decoration: none;
+    cursor: pointer;
+  }
+  .exit small { display: block; font-size: .8rem; font-weight: 500; opacity: .9; letter-spacing: 0; }
+  main {
+    width: 100%; max-width: 480px; margin: 0 auto;
+    padding: 18px 16px calc(20px + env(safe-area-inset-bottom));
+    flex: 1; display: flex; flex-direction: column; gap: 12px;
+  }
+  header h1 { margin: 0; font-size: 1.5rem; color: var(--purple-dark); }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
+  .card {
+    background: #fff; border: 1px solid var(--line); border-radius: 16px;
+    padding: 12px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .card .what { font-size: .85rem; color: var(--muted); margin: 0 2px; }
+  .btn {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    min-height: 56px; padding: 12px 16px; border-radius: 12px;
+    background: var(--purple); color: #fff; text-decoration: none;
+    font-weight: 700; font-size: 1.1rem;
+  }
+  .btn:active { filter: brightness(.88); }
+  .btn span:last-child { font-weight: 500; font-size: .9rem; opacity: .92; white-space: nowrap; }
+  .btn.red { background: var(--red); }
+  .btn.wa { background: var(--wa); }
+  .btn.soft { background: var(--purple-soft); color: var(--purple-dark); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .row .btn { font-size: 1rem; justify-content: center; text-align: center; }
+  .note {
+    margin-top: auto; font-size: .82rem; color: var(--muted);
+    border-top: 1px solid var(--line); padding-top: 10px;
+  }
+  .note p { margin: 0 0 4px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #f2c94c; outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<a class="exit" id="exit" href="https://www.google.com/" rel="noreferrer">
+  HIZLI ÇIKIŞ ✕
+  <small>Dokun ya da Esc'ye bas — sayfa hemen kapanır</small>
+</a>
+
+<main>
+  <header>
+    <h1>Yalnız değilsin.</h1>
+    <p>Ücretsiz, gizli, 7/24. Bir dokunuşla ulaş.</p>
+  </header>
+
+  <section class="card">
+    <a class="btn red" href="tel:112"><span>112 Acil</span><span>Hemen ara</span></a>
+    <p class="what">Şu an tehlikedeysen.</p>
+  </section>
+
+  <section class="card">
+    <a class="btn" href="tel:183"><span>ALO 183</span><span>Ara</span></a>
+    <a class="btn wa" href="https://wa.me/905011830183" rel="noreferrer"><span>ALO 183 WhatsApp</span><span>Yaz</span></a>
+    <p class="what">Aile ve Sosyal Hizmetler Bakanlığı destek hattı. Sesli konuşamıyorsan yazabilirsin.</p>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <a class="btn" id="kades-ios" href="https://apps.apple.com/tr/app/kades/id1360309770" rel="noreferrer">KADES<br>iPhone</a>
+      <a class="btn" id="kades-android" href="https://play.google.com/store/apps/details?id=tr.gov.egm.kades" rel="noreferrer">KADES<br>Android</a>
+    </div>
+    <p class="what">Tek tuşla polise ihbar uygulaması (Emniyet Genel Müdürlüğü).</p>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <a class="btn soft" href="tel:+902122925231">Mor Çatı<br>Ara</a>
+      <a class="btn soft" href="https://www.morcati.org.tr/" rel="noreferrer">Mor Çatı<br>Web</a>
+    </div>
+    <p class="what">Bağımsız kadın dayanışması: danışmanlık ve sığınak desteği.</p>
+  </section>
+
+  <footer class="note">
+    <p>Telefonu başkası da kullanıyorsa: bu sayfayı gizli sekmede aç ya da sonra tarayıcı geçmişini sil.</p>
+    <p>Mor Kart · İstanbul Gedik Üniversitesi gönüllülük projesi</p>
+  </footer>
+</main>
+
+<script>
+  // Hızlı çıkış: geçmişe kayıt bırakmadan (replace) masum bir siteye git.
+  function quickExit(e) {
+    if (e) e.preventDefault();
+    document.body.style.display = 'none';
+    location.replace('https://www.google.com/search?q=hava+durumu');
+  }
+  document.getElementById('exit').addEventListener('click', quickExit);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') quickExit(e); });
+
+  // KADES: cihaza göre doğru mağazayı öne al.
+  var ua = navigator.userAgent;
+  if (/android/i.test(ua)) document.getElementById('kades-ios').style.display = 'none';
+  else if (/iphone|ipad|ipod/i.test(ua)) document.getElementById('kades-android').style.display = 'none';
+  if (/android|iphone|ipad|ipod/i.test(ua)) document.querySelector('.row').style.gridTemplateColumns = '1fr';
+</script>
+</body>
+</html>
